@@ -14,16 +14,8 @@ namespace Bonus16
 
             app.PopulateCars();
 
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("\tMake\tModel\tYear\tPrice");
-            Console.WriteLine();
-
-            foreach (var car in app.Cars)
-            {
-                Console.WriteLine(car.ToString());
-            }
-
+            app.DisplayCarList();
+            
             Console.ReadKey();
         }
     }

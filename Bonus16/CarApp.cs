@@ -8,11 +8,11 @@ namespace Bonus16
 {
     public class CarApp
     {
-        public List<Car> Cars { get; set; }
+        private List<Car> _cars;
 
         public void PopulateCars()
         {
-            Cars = new List<Car>();
+            _cars = new List<Car>();
             string input = "", make = "", model = "";
             bool isValid = false;
             int numberOfCars = 0;
@@ -102,7 +102,21 @@ namespace Bonus16
                 } while (!isValid);
 
                 Car c = new Car(make, model, year, price);
-                Cars.Add(c);
+                _cars.Add(c);
+            }
+
+        }
+
+        public void DisplayCarList()
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("\tMake\tModel\tYear\tPrice");
+            Console.WriteLine();
+
+            foreach (var car in _cars)
+            {
+                Console.WriteLine(car.ToString());
             }
 
         }
