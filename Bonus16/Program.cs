@@ -8,7 +8,6 @@ namespace Bonus16
 {
     class Program
     {
-        //Comment
         static void Main(string[] args)
         {
             var app = new CarApp();
