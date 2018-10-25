@@ -25,14 +25,16 @@ namespace Bonus16
             {
                 isValid = true;
                 Console.WriteLine("How many cars would you like to create?");
-                try
-                {
-                    numberOfCars = int.Parse(Console.ReadLine());
-                }
-                catch (Exception)
+                input = Console.ReadLine();
+
+                if (!Validator.IsValidInt(input))
                 {
                     isValid = false;
                     Console.WriteLine("Invalid input, enter an integer.");
+                }
+                else
+                {
+                    numberOfCars = int.Parse(input);
                 }
             } while (!isValid);
 
@@ -43,9 +45,9 @@ namespace Bonus16
                     isValid = true;
                     Console.WriteLine("Enter Make");
                     input = Console.ReadLine();
-                    if (string.IsNullOrWhiteSpace(input))
+                    if (!Validator.IsValidString(input))
                     {
-                        Console.WriteLine("Invalid input.  Enter an integer.");
+                        Console.WriteLine("Invalid input.");
                         isValid = false;
                     }
                     else
@@ -58,9 +60,9 @@ namespace Bonus16
                     isValid = true;
                     Console.WriteLine("Enter Model");
                     input = Console.ReadLine();
-                    if (string.IsNullOrWhiteSpace(input))
+                    if (!Validator.IsValidString(input))
                     {
-                        Console.WriteLine("Invalid input.  Enter an integer.");
+                        Console.WriteLine("Invalid input.");
                         isValid = false;
                     }
                     else
@@ -72,28 +74,30 @@ namespace Bonus16
                 {
                     isValid = true;
                     Console.WriteLine("Enter Year");
-                    try
-                    {
-                        year = int.Parse(Console.ReadLine());
-                    }
-                    catch (Exception)
+                    input = Console.ReadLine();
+                    if (!Validator.IsValidInt(input))
                     {
                         isValid = false;
                         Console.WriteLine("Invalid input, enter an integer.");
+                    }
+                    else
+                    {
+                        year = int.Parse(input);
                     }
                 } while (!isValid);
                 do
                 {
                     isValid = true;
                     Console.WriteLine("Enter Price");
-                    try
-                    {
-                        price = double.Parse(Console.ReadLine());
-                    }
-                    catch (Exception)
+                    input = Console.ReadLine();
+                    if (!Validator.IsValidDouble(input))
                     {
                         isValid = false;
                         Console.WriteLine("Invalid input, enter a double.");
+                    }
+                    else
+                    {
+                        price = double.Parse(input);
                     }
                 } while (!isValid);
 
